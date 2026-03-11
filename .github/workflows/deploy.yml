@@ -15,7 +15,7 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -42,7 +42,7 @@ jobs:
         run: bash ./bin/scripts/generateDocs.sh
   push_all:
     name: Push Countly Test Image
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2

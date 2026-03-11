@@ -12,7 +12,7 @@ on:
         default: "next"
 jobs:
   sync-branch:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@master
 

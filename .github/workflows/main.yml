@@ -65,7 +65,7 @@ jobs:
         if: ${{ always() }}
         run: sudo cat /var/log/nginx/error.log
   lint:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     services:
       mongodb:
@@ -122,7 +122,7 @@ jobs:
         working-directory: /opt/countly
         run: sudo countly task dist-all
   test-api-core:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     services:
       mongodb:
@@ -169,7 +169,7 @@ jobs:
           node bin/scripts/test.connection.js
           npx grunt mochaTest
   test-api-plugins:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     services:
       mongodb:
@@ -222,7 +222,7 @@ jobs:
           node bin/scripts/test.connection.js
           npx grunt mochaTest       
   ui-test-dashboard:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     services:
       mongodb:
@@ -300,7 +300,7 @@ jobs:
           curl -o /tmp/uploader.log -u "${{ secrets.BOX_UPLOAD_AUTH }}" ${{ secrets.BOX_UPLOAD_PATH }} -T "$ARTIFACT_ARCHIVE_NAME"
 
   ui-test-onboarding:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     services:
       mongodb:
